@@ -37,6 +37,16 @@ public class YahtzeeTest {
 		assertScore(Lists.newArrayList(1, 1, 1, 1, 1), Category.TWOS, 0);
 	}
 
+	@Test
+	public void twosShouldReturn8() {
+		assertScore(Lists.newArrayList(1, 2, 2, 2, 2), Category.TWOS, 8);
+	}
+
+	@Test
+	public void threesShouldReturn6() {
+		assertScore(Lists.newArrayList(1, 3, 3, 2, 2), Category.THREES, 6);
+	}
+
 	public void assertScore(Iterable<Integer> dice, Category category,
 			int expected) {
 		int result = yahtzee.score(dice, category);
