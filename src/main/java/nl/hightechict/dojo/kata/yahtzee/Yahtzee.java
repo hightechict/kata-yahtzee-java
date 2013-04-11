@@ -8,7 +8,7 @@ import com.google.common.collect.Multiset;
 public class Yahtzee {
 
 	public enum Category {
-		ONES, TWOS, THREES
+		ONES, TWOS, THREES, FOURS, FIVES, SIXES
 	}
 
 	private final Hashtable<Category, Integer> CategoryToIntegerLookup = new Hashtable<Category, Integer>();
@@ -17,7 +17,9 @@ public class Yahtzee {
 		CategoryToIntegerLookup.put(Category.ONES, 1);
 		CategoryToIntegerLookup.put(Category.TWOS, 2);
 		CategoryToIntegerLookup.put(Category.THREES, 3);
-
+		CategoryToIntegerLookup.put(Category.FOURS, 4);
+		CategoryToIntegerLookup.put(Category.FIVES, 5);
+		CategoryToIntegerLookup.put(Category.SIXES, 6);
 	}
 
 	public int score(Iterable<Integer> dice, Category category) {
