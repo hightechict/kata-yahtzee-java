@@ -24,11 +24,23 @@ public class Yahtzee {
 
 	public int score(Iterable<Integer> dice, Category category) {
 		Multiset<Integer> diceThrow = HashMultiset.create(dice);
-		if (category == Category.CHANCE)
-			return 15;
-		else {
-			Integer value = CategoryToIntegerLookup.get(category);
-			return value * diceThrow.count(value);
+		if (category == Category.CHANCE) {
+			return diceSum(diceThrow);
+		} else {
+			return singlesScore(category, diceThrow);
 		}
+	}
+
+	private int singlesScore(Category category, Multiset<Integer> diceThrow) {
+		Integer value = CategoryToIntegerLookup.get(category);
+		return value * diceThrow.count(value);
+	}
+
+	private int diceSum(Multiset<Integer> diceThrow) {
+		int value = 0;
+		for (Integer i : diceThrow) {
+			value += i;
+		}
+		return value;
 	}
 }

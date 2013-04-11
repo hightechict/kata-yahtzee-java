@@ -63,8 +63,13 @@ public class YahtzeeTest {
 	}
 
 	@Test
-	public void chanceShouldReturn() {
+	public void chanceShouldReturn15() {
 		assertScore(Lists.newArrayList(1, 2, 3, 4, 5), Category.CHANCE, 15);
+	}
+
+	@Test
+	public void chanceShouldReturn17() {
+		assertScore(Lists.newArrayList(1, 2, 3, 5, 6), Category.CHANCE, 17);
 	}
 
 	public void assertScore(Iterable<Integer> dice, Category category,
