@@ -19,16 +19,17 @@ public class YahtzeeTest {
 
 	@Test
 	public void onesShouldReturnZeroForIncompatibelThrow() {
-		int result = yahtzee.score(Lists.newArrayList(2, 2, 2, 2, 2),
-				Category.ONES);
-		Assert.assertEquals(0, result);
+		assertScore(Lists.newArrayList(2, 2, 2, 2, 2), Category.ONES, 0);
 	}
 
 	@Test
 	public void onesShouldReturnOneForSingleOneDice() {
-		int result = yahtzee.score(Lists.newArrayList(1, 2, 2, 2, 2),
-				Category.ONES);
+		assertScore(Lists.newArrayList(1, 2, 2, 2, 2), Category.ONES, 1);
+	}
 
-		Assert.assertEquals(1, result);
+	public void assertScore(Iterable<Integer> dice, Category category,
+			int expected) {
+		int result = yahtzee.score(dice, category);
+		Assert.assertEquals(expected, result);
 	}
 }
