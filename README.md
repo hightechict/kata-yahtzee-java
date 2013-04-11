@@ -1,4 +1,4 @@
-kata-yahtzee-java
+Yathzee kata (java)
 =================
 
-Yathzee kata
+For details see http://codingdojo.org/cgi-bin/wiki.pl?KataYahtzee
